@@ -1,0 +1,13 @@
+exports.Role_Exist='Role already exist';
+exports.Role_Added_Success='Role Added Successfully';
+exports.Roles_retrived_success="Roles retrived successfully";
+exports.User_Added_success='User Added Successfully';
+exports.User_retrived_success='User retrived successfuly';
+exports.User_already_exist='User already exist';
+exports.Quantites_retirved_successfully='Quantites retrived successfully';
+exports.Quantity_Added_successfully='Quantity added successfully';
+exports.Quantity_Already_Exist='Quanity already exist';
+exports.Quantity_Deleted_successfully='Quantity deleted successfully';
+exports.Quantity_Not_Exist='Qiantity doesnot exist';
+exports.Quantity_Updated_successfully='Quantity updated successfully';
+exports.QUantity_Cannot_Be_Updated="Quantity cannot be updated";
