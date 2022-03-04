@@ -28,5 +28,6 @@ app.route('/getPaymentsModes').get(category.getPaymentMode),
 app.route('/getUserType').get(category.getUserType),
 app.route('/getBrands').get(category.getBrands),
 app.route('/getCustomerCare').get(category.getCustomerCare),
-app.route('/getProducts').get(products.getProductDetails)
+app.route('/getProducts').get(products.getProductDetails),
+app.route('/getProductsByUser/:id').get(products.getProductDetailsByUser)
 }
