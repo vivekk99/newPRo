@@ -7,3 +7,9 @@ exports.getProducts= async()=>{
     
    return [data]
 }
+
+exports.getProductsByUser = async(id)=>{
+    const product= await db.select('*').from('product_details').where({user_id:id});
+   return [product];
+}
+
