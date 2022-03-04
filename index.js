@@ -2,7 +2,7 @@ const express =require('express')
 const cors =require('cors')
 const passport = require('passport')
 app =express()
-port =process.env.PORT || 4020
+port =process.env.PORT || 4019
 
 
 app.use(express.json())
