@@ -52,9 +52,9 @@ exports.getProductDetails = async (req, res) => {
       }
       else{
         res.json({
-          data:data,
-          message:message,
-          status:200
+          status: "Success",
+          statusCode: 200,
+          message:"Product added successfully"
       })
       }
       
