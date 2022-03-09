@@ -37,7 +37,7 @@ exports.addProducts = async(data,qrScan)=>{
             })
         });
        
-        return [result]
+        return ["success"]
     }
     else{
         return ["Product serial no already exist"]
