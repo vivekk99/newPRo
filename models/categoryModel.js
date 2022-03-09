@@ -45,5 +45,18 @@ exports.getUnitTypes= async()=>{
    const data= await db.select('*').from('customer_care_details').join('brands_details','customer_care_details.brand_id','customer_care_details.id');
     return [data]
  }
+ 
+ exports.addPurchaseMode = async(data)=>{
+   const exist= await db.select('*').from('purchase_mode').where({purchase_mode:data.purchase_mode});
+   
+   
+   if(exist.length === 0){
+      await db.insert(data).into('purchase_mode');
+      return["Success"]
+   }
+   else{
+      return ["PurchaseMode already exist"]
+  }
+ }
 
  
