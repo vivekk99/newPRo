@@ -4,12 +4,12 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('purchase_mode').insert([
-        {id: 1, purchase_mode: 'Cash'},
-        {id: 2, purchase_mode: 'Creditcard'},
-        {id: 3, purchase_mode: 'Debitcard'},
-        {id: 4, purchase_mode: 'UPI'},
-        {id: 5, purchase_mode: 'Online'},
-        {id: 6, purchase_mode: 'Off-line'}
+        {id: 5, purchase_mode: 'Cash'},
+        {id: 6, purchase_mode: 'Creditcard'},
+        {id: 7, purchase_mode: 'Debitcard'},
+        {id: 8, purchase_mode: 'UPI'},
+        {id: 9, purchase_mode: 'Online'},
+        {id: 10, purchase_mode: 'Off-line'}
       ]);
     });
 };
