@@ -164,3 +164,30 @@ exports.getUserType = async (req, res) => {
     }
   };
 
+exports.addPurchaseMode = async(req,res)=>{
+    try{
+      const [data]= await category.addPurchaseMode(req.body);
+      if(data ==="PurchaseMode already exist"){
+        res.json({
+        status: "Success",
+        statusCode: 200,
+        message:data
+      })
+      }
+      else{
+        res.json({
+          status:"Success",
+        statusCode: 200,
+        message:"purchase mode added successfully"
+      })
+      }
+      
+      }
+      catch(error){
+          res.json({
+              error:error,
+              status:400
+          })
+      }
+  }
+
