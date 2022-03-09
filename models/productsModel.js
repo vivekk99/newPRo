@@ -16,3 +16,31 @@ exports.getProductsByUser = async(id)=>{
   .where({user_id:id});
    return [data];
 }
+
+exports.addProducts = async(data,qrScan)=>{
+ 
+    const product= await db.select('*').from('product_details').where({products_serial_no:data.products_serial_no});
+    if(product.length == 0){
+      
+         await db.insert(data).into('product_details').returning('id').then((id)=>{
+            qrScan.forEach( async (value)=>{
+                
+                const values={
+                    title:value.title,
+                    value:value.value,
+                    product_id:id[0]
+                }
+  
+                console.log(values)
+               await db.insert(values).into('QRDetails')
+        
+            })
+        });
+       
+        return [result]
+    }
+    else{
+        return ["Product serial no already exist"]
+    }
+  
+}
