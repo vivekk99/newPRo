@@ -19,6 +19,54 @@ exports.getProductDetails = async (req, res) => {
     }
   };
 
+ exports.addProductDetails = async (req, res) => {
+
+    const values={
+      product_name:req.body.product_name,
+      product_image:req.body.product_image,
+      user_id:req.body.user_id,
+      brand_id:req.body.brand_id,
+      products_serial_no:req.body.products_serial_no,
+      products_model_no:req.body.products_model_no,
+      date_of_purchase:req.body.date_of_purchase,
+      warrenty_id:req.body.warrenty_id,
+      unit_id:req.body.unit_id,
+      quantity:req.body.quantity,
+      price:req.body.price,
+      sacanned_image:"D:/desktop/images",
+      invoice_image:req.body.invoice_image,
+      user_type_id:req.body.user_type_id,
+      purchase_mode_id:req.body.purchase_mode_id
+  } 
+
+  const qrscan =req.body.sacanned_image;
+
+    try{
+      const [data]= await products.addProducts(values,qrscan);
+      if(data ==="Product serial no already exist"){
+        res.json({
+        status: "Success",
+        statusCode: 200,
+        message:data
+      })
+      }
+      else{
+        res.json({
+          data:data,
+          message:message,
+          status:200
+      })
+      }
+      
+      }
+      catch(error){
+          res.json({
+              error:error,
+              status:400
+          })
+      }
+  };
+
   exports.getProductDetailsByUser = async (req, res) => {
     const id= req.params.id;
     try {
