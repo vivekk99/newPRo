@@ -30,5 +30,6 @@ app.route('/getBrands').get(category.getBrands),
 app.route('/getCustomerCare').get(category.getCustomerCare),
 app.route('/getProducts').get(products.getProductDetails),
 app.route('/getProductsByUser/:id').get(products.getProductDetailsByUser),
-app.route('/addProducts').post(products.addProductDetails)
+app.route('/addProducts').post(products.addProductDetails),
+app.route('/addPurchaseMode').post(category.addPurchaseMode)
 }
