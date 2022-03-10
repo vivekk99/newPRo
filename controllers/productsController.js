@@ -22,7 +22,7 @@ exports.getProductDetails = async (req, res) => {
  exports.addProductDetails = async (req, res) => {
 
     const values={
-      product_name:req.body.product_name,
+     product_name:req.body.product_name,
       product_image:req.body.product_image,
       user_id:req.body.user_id,
       brand_id:req.body.brand_id,
@@ -36,7 +36,13 @@ exports.getProductDetails = async (req, res) => {
       sacanned_image:"D:/desktop/images",
       invoice_image:req.body.invoice_image,
       user_type_id:req.body.user_type_id,
-      purchase_mode_id:req.body.purchase_mode_id
+      purchase_mode_id:req.body.purchase_mode_id,
+      category_id:req.body.category_id,
+      sub_category_id:req.body.sub_category_id,
+      duration:req.body.duration,
+      payment_mode_id:req.body.payment_mode_id,
+      cutomer_care_id:req.body.cutomer_care_id,
+      warrenty_type_id:req.body.warrenty_type_id
   } 
 
   const qrscan =req.body.sacanned_image;
