@@ -59,4 +59,9 @@ exports.getUnitTypes= async()=>{
   }
  }
 
+ exports.getPurchaseMode =async () =>{
+   const data= await db.select('*').from('payment_mode')
+ return [data]
+  }
+ 
  
