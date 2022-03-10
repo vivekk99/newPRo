@@ -13,7 +13,7 @@ exports.up = function(knex) {
         table.integer('unit_id').references('id').inTable('unit_type')
         table.string('quantity',255).notNullable()
         table.string('price',255).notNullable()
-        table.string('sacanned_image',255).notNullable()
+        table.string('scanned_image',255).notNullable()
         table.string('invoice_image',255).notNullable()
         table.integer('user_type_id').references('id').inTable('user_type')
         table.integer('purchase_mode_id').references('id').inTable('purchase_mode')
