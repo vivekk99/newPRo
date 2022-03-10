@@ -6,7 +6,8 @@ const devices = require('./controllers/deviceController')
 const customer = require('./controllers/customerController')
 const category = require('./controllers/categoryController')
 const products = require('./controllers/productsController')
-
+const multer  = require('multer')
+const upload = multer({ dest: 'uploads/' })
 module.exports=function(app){
 app.route('/getusers').get(user.getUsers),
 app.route('/addUsers').post(user.addUsers),
@@ -30,7 +31,7 @@ app.route('/getBrands').get(category.getBrands),
 app.route('/getCustomerCare').get(category.getCustomerCare),
 app.route('/getProducts').get(products.getProductDetails),
 app.route('/getProductsByUser/:id').get(products.getProductDetailsByUser),
-app.route('/addProducts').post(products.addProductDetails),
+app.route('/addProducts').post(upload.array("files") ,products.addProductDetails),
 app.route('/addPurchaseMode').post(category.addPurchaseMode),
 app.route('/deleteProduct').post(products.deleteProductDetails)
 }
