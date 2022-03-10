@@ -101,3 +101,21 @@ const graph = [{category:"Personal",deviceCount:personal,color:'#F5AA00'},{categ
       });
     }
   };
+
+ exports.deleteProductDetails = async (req, res) => {
+    try {
+      const [data] = await products.deleteProduct();
+      res.json({
+        status: "Success",
+        statusCode: 200,
+        data: 'Product deleted successfully',
+        // message:message,
+      });
+    } catch (error) {
+      res.json({
+        error: error,
+        status: "Failed",
+        statusCode: 400,
+      });
+    }
+  };
