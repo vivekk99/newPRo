@@ -7,7 +7,16 @@ const customer = require('./controllers/customerController')
 const category = require('./controllers/categoryController')
 const products = require('./controllers/productsController')
 const multer  = require('multer')
-const upload = multer({ dest: 'uploads/' })
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'uploads/')
+    },
+    filename: function (req, file, cb) {
+      cb(null, Date.now() + '.jpg') //Appending .jpg
+    }
+  })
+var upload = multer({ storage: storage });
+//const upload = multer({ dest: 'uploads/' })
 module.exports=function(app){
 app.route('/getusers').get(user.getUsers),
 app.route('/addUsers').post(user.addUsers),
