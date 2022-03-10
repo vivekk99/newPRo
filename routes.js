@@ -33,5 +33,6 @@ app.route('/getProducts').get(products.getProductDetails),
 app.route('/getProductsByUser/:id').get(products.getProductDetailsByUser),
 app.route('/addProducts').post(upload.array("files") ,products.addProductDetails),
 app.route('/addPurchaseMode').post(category.addPurchaseMode),
-app.route('/deleteProduct').post(products.deleteProductDetails)
+app.route('/deleteProduct').post(products.deleteProductDetails),
+app.route('/getPurchaseMode').get(category.getPurchaseMode)
 }
