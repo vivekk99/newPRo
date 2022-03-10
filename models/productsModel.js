@@ -44,3 +44,8 @@ exports.addProducts = async(data,qrScan)=>{
     }
   
 }
+
+exports.deleteProduct = async ()=>{
+ const data=  await db("product_details").where("user_id",1).del();
+ console.log(data)
+}
