@@ -191,3 +191,22 @@ exports.addPurchaseMode = async(req,res)=>{
       }
   }
 
+exports.getPurchaseMode = async (req, res) => {
+
+    try {
+      const [data] = await category.getPurchaseMode();
+      res.json({
+        status: "Success",
+        statusCode: 200,
+        data: data,
+        // message:message,
+      });
+    } catch (error) {
+      res.json({
+        error: error,
+        status: "Failed",
+        statusCode: 400,
+      });
+    }
+  };
+
