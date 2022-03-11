@@ -22,7 +22,8 @@ exports.getProductDetails = async (req, res) => {
  exports.addProductDetails = async (req, res) => {
 const values={
       product_name:req.body.product_name,
-      product_image:req.files[0].path,
+     // product_image:req.files[0].path,
+    product_image:req.body.product_image,
       user_id:req.body.user_id,
       brand_id:req.body.brand_id,
       products_serial_no:req.body.products_serial_no,
@@ -33,7 +34,8 @@ const values={
       quantity:req.body.quantity,
       price:req.body.price,
       scanned_image:"D:/desktop/images",
-      invoice_image:req.files[1].path,
+     // invoice_image:req.files[1].path,
+     invoice_image:req.body.invoice_image,
       user_type_id:req.body.user_type_id,
       purchase_mode_id:req.body.purchase_mode_id,
       category_id:req.body.category_id,
