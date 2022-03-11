@@ -20,58 +20,58 @@ exports.getProductDetails = async (req, res) => {
   };
 
  exports.addProductDetails = async (req, res) => {
-const values={
-      product_name:req.body.product_name,
-     // product_image:req.files[0].path,
-    product_image:req.body.product_image,
-      user_id:req.body.user_id,
-      brand_id:req.body.brand_id,
-      products_serial_no:req.body.products_serial_no,
-      products_model_no:req.body.products_model_no,
-      date_of_purchase:req.body.date_of_purchase,
-      warrenty_id:req.body.warrenty_id,
-      unit_id:req.body.unit_id,
-      quantity:req.body.quantity,
-      price:req.body.price,
-      scanned_image:"D:/desktop/images",
-     // invoice_image:req.files[1].path,
-     invoice_image:req.body.invoice_image,
-      user_type_id:req.body.user_type_id,
-      purchase_mode_id:req.body.purchase_mode_id,
-      category_id:req.body.category_id,
-      sub_category_id:req.body.sub_category_id,
-      duration:req.body.duration,
-      payment_mode_id:req.body.payment_mode_id,
-     // cutomer_care_id:req.body.cutomer_care_id,
-      warrenty_type_id:req.body.warrenty_type_id,
-  } 
+// const values={
+//       product_name:req.body.product_name,
+//      // product_image:req.files[0].path,
+//     product_image:req.body.product_image,
+//       user_id:req.body.user_id,
+//       brand_id:req.body.brand_id,
+//       products_serial_no:req.body.products_serial_no,
+//       products_model_no:req.body.products_model_no,
+//       date_of_purchase:req.body.date_of_purchase,
+//       warrenty_id:req.body.warrenty_id,
+//       unit_id:req.body.unit_id,
+//       quantity:req.body.quantity,
+//       price:req.body.price,
+//       scanned_image:"D:/desktop/images",
+//      // invoice_image:req.files[1].path,
+//      invoice_image:req.body.invoice_image,
+//       user_type_id:req.body.user_type_id,
+//       purchase_mode_id:req.body.purchase_mode_id,
+//       category_id:req.body.category_id,
+//       sub_category_id:req.body.sub_category_id,
+//       duration:req.body.duration,
+//       payment_mode_id:req.body.payment_mode_id,
+//      // cutomer_care_id:req.body.cutomer_care_id,
+//       warrenty_type_id:req.body.warrenty_type_id,
+//   } 
 
-  const qrscan =req.body.scanned_image;
+//   const qrscan =req.body.scanned_image;
 
-    try{
-      const [data]= await products.addProducts(values,qrscan);
-      if(data ==="Product serial no already exist"){
-        res.json({
-        status: "Success",
-        statusCode: 200,
-        message:data
-      })
-      }
-      else{
-        res.json({
-          status: "Success",
-          statusCode: 200,
-          message:"Product added successfully"
-      })
-      }
+//     try{
+//       const [data]= await products.addProducts(values,qrscan);
+//       if(data ==="Product serial no already exist"){
+//         res.json({
+//         status: "Success",
+//         statusCode: 200,
+//         message:data
+//       })
+//       }
+//       else{
+//         res.json({
+//           status: "Success",
+//           statusCode: 200,
+//           message:"Product added successfully"
+//       })
+//       }
       
-      }
-      catch(error){
-          res.json({
-              error:error,
-              status:400
-          })
-      }
+//       }
+//       catch(error){
+//           res.json({
+//               error:error,
+//               status:400
+//           })
+//       }
   };
 
   exports.getProductDetailsByUser = async (req, res) => {
