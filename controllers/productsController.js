@@ -20,7 +20,7 @@ exports.getProductDetails = async (req, res) => {
   };
 
  exports.addProductDetails = async (req, res) => {
-     console.log(req.body);
+     console.log(req.body.warrenty_type_id);
 // const values={
 //       product_name:req.body.product_name,
 //      // product_image:req.files[0].path,
