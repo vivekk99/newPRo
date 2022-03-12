@@ -54,11 +54,3 @@ exports.deleteProduct = async ()=>{
  console.log(data)
 }
 
-
-exports.updateSubCategory =async (values,id)=>{
-     console.log(values);
-     const data = await db("sub_category").where("id",id).update({sub_category_name:values.sub_category_name
-   });
-
-   return [data]
-  }
