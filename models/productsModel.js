@@ -53,6 +53,8 @@ for (let index = 0; index < data.length; index++) {
     values.sacanned_image=codeDetails;
     datas.push(values);
 }
+    
+    console.log(datas);
   return [datas];
 }
 
