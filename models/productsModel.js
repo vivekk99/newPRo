@@ -39,12 +39,21 @@ exports.addProducts = async(data,qrScan)=>{
   
 }
 exports.getProductsByUser = async(id)=>{
-
- const data= await db.select('*').from('product_details').join('user_info','product_details.user_id','user_info.id').join('brands_details','product_details.brand_id','brands_details.id')
-  .join('warrenty','product_details.warrenty_id','warrenty.id').join('warrenty_types','product_details.warrenty_type_id','warrenty_types.id').join('unit_type','product_details.unit_id','unit_type.id')
-  .join('user_type','product_details.user_type_id','user_type.id').join('purchase_mode','product_details.purchase_mode_id','purchase_mode.id').join('category','product_details.category_id','category.id').join('sub_category','product_details.sub_category_id','sub_category.id')
-  .where({user_id:id});
-   return [data];
+  //  const product= await db.select('*').from('product_table').where({user_id:id});
+  
+  const data= await db.select('*').from('product_table').join('user_info','product_table.user_id','user_info.id').join('brands_details','product_table.brand_id','brands_details.id')
+  .join('warrenty','product_table.warrenty_id','warrenty.id').join('warrenty_types','product_table.warrenty_type_id','warrenty_types.id').join('unit_type','product_table.unit_id','unit_type.id')
+  .join('user_type','product_table.user_type_id','user_type.id').join('purchase_mode','product_table.purchase_mode_id','purchase_mode.id').join('category','product_table.category_id','category.id').join('sub_category','product_table.sub_category_id','sub_category.id').join('payment_mode','product_table.payment_mode_id','payment_mode.id')
+  .where({user_id:id})
+for (let index = 0; index < data.length; index++) {
+    let values = data[index];
+    console.log(values.id);
+    let codeDetails=await db.select('*').from('QRDetails').where({product_id:values.id});
+    console.log(codeDetails);
+    values.sacanned_image=codeDetails;
+    datas.push(values);
+}
+  return [datas];
 }
 
 
