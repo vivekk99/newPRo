@@ -7,7 +7,8 @@ exports.getCategory= async()=>{
 }
 
 exports.getSubCategory= async()=>{  
-    const data= await db.select('*').from('sub_category').join('category','sub_category.category_id','sub_category.id');
+    const data= await db.select('*').from('sub_category');
+    //.join('category','sub_category.category_id','sub_category.id');
    return [data]
 }
 
