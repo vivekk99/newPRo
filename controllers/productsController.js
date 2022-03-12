@@ -79,7 +79,7 @@ const values={
     const id= req.params.id;
     try {
       const [data] = await products.getProductsByUser(id);
-
+console.log(data);
       let house = data.reduce(function (n, person) {
         return n + (person.category_name == 'house');
     }, 0);
