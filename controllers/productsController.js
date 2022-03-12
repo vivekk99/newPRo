@@ -145,7 +145,3 @@ exports.updateSubCategory= async(req,res)=>{
       });
     }
   }
-
-
-
-
