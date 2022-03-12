@@ -128,20 +128,3 @@ const graph = [{category:"Personal",deviceCount:personal,color:'#F5AA00'},{categ
     }
   };
 
-exports.updateSubCategory= async(req,res)=>{
-    try {
-      const [data] = await category.updateSubCategory(req.body,req.params.id);
-      res.json({
-        status: "Success",
-        statusCode: 200,
-        data: 'Subcategory updated successfully',
-        // message:message,
-      });
-    } catch (error) {
-      res.json({
-        error: error,
-        status: "Failed",
-        statusCode: 400,
-      });
-    }
-  }
