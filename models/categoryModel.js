@@ -72,5 +72,11 @@ exports.getUnitTypes= async()=>{
 
    return [data]
   }
- 
+ exports.updateCategory =async (values ,id)=>{
+     console.log(values.icon)
+   const data = await db("category").where("id",id).update({icon:values.icon
+   });
+
+   return [data]
+  }
  
