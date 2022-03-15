@@ -228,3 +228,21 @@ exports.updateSubCategory= async(req,res)=>{
     }
   }
 
+  exports.updateCategory= async(req,res)=>{
+    try {
+      const [data] = await category.updateCategory(req.body,req.params.id);
+      res.json({
+        status: "Success",
+        statusCode: 200,
+        data: 'category updated successfully',
+        // message:message,
+      });
+    } catch (error) {
+      res.json({
+        error: error,
+        status: "Failed",
+        statusCode: 400,
+      });
+    }
+  }
+
