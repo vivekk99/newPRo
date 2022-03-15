@@ -49,5 +49,6 @@ app.route('/addProducts').post(upload.fields([{
 app.route('/addPurchaseMode').post(category.addPurchaseMode),
 app.route('/deleteProduct').post(products.deleteProductDetails),
 app.route('/getPurchaseMode').get(category.getPurchaseMode),
-app.route('/updateSubCategory/:id').post(category.updateSubCategory)
+app.route('/updateSubCategory/:id').post(category.updateSubCategory),
+app.route('/updateCategory/:id').post(category.updateCategory)
 }
