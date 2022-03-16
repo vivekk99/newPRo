@@ -60,5 +60,19 @@ exports.deleteProduct = async ()=>{
  console.log(data)
 }
 
+exports.getCustomerCareById =async (id)=>{
+  const data = await db("customer_care_details").where('customer_care_details.id',id);
+  let house = data.reduce(function (n, person) {
+    return n + (person.brand_id );
+}, 0);
+
+
+const brand = await db("brands_details").where('id',house);
+data[0].brandDetails=brand;
+  //.join('brands_details','customer_care_details.brand_id','customer_care_details.id')
+ 
+  return [data]
+ }
+
 
 
