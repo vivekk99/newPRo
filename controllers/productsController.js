@@ -43,7 +43,7 @@ const values={
       sub_category_id:req.body.sub_category_id,
       duration:req.body.duration,
       payment_mode_id:req.body.payment_mode_id,
-     // cutomer_care_id:req.body.cutomer_care_id,
+      cutomer_care_id:req.body.cutomer_care_id,
       warrenty_type_id:req.body.warrenty_type_id,
   } 
 
